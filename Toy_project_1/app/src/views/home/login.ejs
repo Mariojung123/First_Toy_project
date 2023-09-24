@@ -14,17 +14,11 @@
     <button>로그인</button>
     <button type="button" onclick="location.href = 'https://accounts.google.com/o/oauth2/v2/auth';">google 로그인</button>
   </body>
-  <script>
-    app.get('/', (req, res) => {
-      res.send(`
-          <h1>Log in</h1>
-          <a href="/login">Log in</a>
-      `);
-    });
+  <script> //위에 링크로 이동하면서 인증 키를 넘겨줘야하는데 어떤 방식으로 해야할지 가늠이 안옴
     const GOOGLE_CLIENT_ID =
-  '385599561868-87msd9mhtljpgg8ckq5lgpk1ot841tkp.apps.googleusercontent.com';
-    const GOOGLE_CLIENT_SECRET = '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';
-    const GOOGLE_REDIRECT_URI = 'http://kknock.koreacentral.cloudapp.azure.com:3000/login';
+  'a';
+    const GOOGLE_CLIENT_SECRET = 'b';
+    const GOOGLE_REDIRECT_URI = 'c';
 
     app.get('/login', (req, res) => {
     let url = 'https://accounts.google.com/o/oauth2/v2/auth';
