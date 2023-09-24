@@ -28,6 +28,6 @@ function login() {
       }
     })
     .catch((err) => {
-      console.error('로그인 중 에러 밣생'); //error 케치
+      console.error('로그인 중 에러 발생'); //error 케치
     });
 }
