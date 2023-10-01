@@ -4,13 +4,23 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 const oauth = require('./router');
+const google = require('../../routes/home/oauth');
+const db = require('../../../vscdb');
 
 const ctrl = require('./home.ctrl');
 const app = express();
 
-router.get('/home', ctrl.output.home);
+router.get('/', ctrl.output.home);
 router.get('/login', ctrl.output.login);
 router.post('/login', ctrl.process.login);
 router.use('/oauth', oauth);
+
+router.get('/users', function (req, res, next) {
+  //mysql 연동하는 과정인데 에러 뱉음
+  db.query('select * from Users', function (err, results, fields) {
+    if (err) throw err;
+    res.json(results);
+  });
+});
 
 module.exports = router;
