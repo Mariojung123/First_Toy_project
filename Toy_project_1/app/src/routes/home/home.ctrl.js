@@ -9,6 +9,10 @@ const output = {
   login: (req, res) => {
     res.render('home/login');
   },
+  map: (req, res) => {
+    //map.ejs로 가기 위한 변경사항
+    res.render('home/map');
+  },
 };
 
 const process = {

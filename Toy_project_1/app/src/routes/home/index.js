@@ -11,8 +11,8 @@ const ctrl = require('./home.ctrl');
 const app = express();
 
 router.get('/', ctrl.output.home);
-router.get('/login', ctrl.output.login);
-router.post('/login', ctrl.process.login);
+router.use('/login', ctrl.output.login);
+router.use('/map', ctrl.output.map);
 router.use('/oauth', oauth);
 
 router.get('/users', function (req, res, next) {
