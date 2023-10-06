@@ -13,6 +13,7 @@ const app = express();
 router.get('/', ctrl.output.home);
 router.use('/login', ctrl.output.login);
 router.use('/map', ctrl.output.map);
+router.use('/map_test', ctrl.output.map_test);
 router.use('/oauth', oauth);
 
 router.get('/users', function (req, res, next) {
