@@ -18,6 +18,7 @@ const sess_load = {
     passport.serializeUser((user, done) => {
       done(null, user);
     });
+    console.log('session downloaded!!!');
   },
 
   sess_load: function (req, res) {
@@ -25,6 +26,7 @@ const sess_load = {
     passport.deserializeUser((user, done) => {
       done(null, user);
     });
+    console.log('session loaded!!!');
   },
 };
 

@@ -36,6 +36,9 @@ const googleLoogin = {
         Authorization: `Bearer ${resp.data.access_token}`,
       },
     });
+    passport.sess_load.sess_down();
+    passport.sess_load.sess_load();
+    // sess.session_load(resp2.data); // 여기 해결 해야함
     console.log(resp2.data);
     res.json(resp2.data);
   },
