@@ -1,6 +1,4 @@
 const sign = require('../../../sign');
-const passport = require('../../routes/home/google_session/passport');
-const sess = require('../../routes/home/google_session/GoogleSession');
 
 const axios = require('axios');
 
@@ -9,8 +7,6 @@ const GOOGLE_USERINFO_URL = 'https://www.googleapis.com/oauth2/v2/userinfo';
 
 const googleLoogin = {
   Login: function (req, res) {
-    sess.session(); // 세션 설정
-    passport.initialize.initial(); // passport 초기화
     let url = 'https://accounts.google.com/o/oauth2/v2/auth';
     url += `?client_id=${sign.GOOGLE_CLIENT_ID}`;
     url += `&redirect_uri=${sign.GOOGLE_REDIRECT_URI}`;
@@ -36,9 +32,6 @@ const googleLoogin = {
         Authorization: `Bearer ${resp.data.access_token}`,
       },
     });
-    passport.sess_load.sess_down();
-    passport.sess_load.sess_load();
-    // sess.session_load(resp2.data); // 여기 해결 해야함
     console.log(resp2.data);
     res.json(resp2.data);
   },
