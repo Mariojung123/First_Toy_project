@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+require('dotenv').config();
 
 const app = express();
 
@@ -9,7 +10,7 @@ const sess = {
     console.log('helloworld!!!');
     app.use(
       session({
-        secret: 'hellomando',
+        secret: process.env.SessionSecret,
         resave: false,
         saveUninitialized: true,
       })
