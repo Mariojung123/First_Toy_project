@@ -14,9 +14,12 @@
       src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e653534c07e4a315d0f598939d9440f7"
     ></script>
     <script>
+      const latitude = 37.2974419499074;
+      const longtitude = 127.04151640188734;
+
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         mapOption = {
-          center: new kakao.maps.LatLng(37.2974419499074, 127.04151640188734), // 지도의 중심좌표
+          center: new kakao.maps.LatLng(latitude, longtitude), // 지도의 중심좌표
           level: 3, // 지도의 확대 레벨
         };
 
