@@ -9,9 +9,17 @@
     <title>Document</title>
   </head>
   <body>
-    <input id="id" type="text" placeholder="아이디"/></br>
-    <input id="psword" type="text" placeholder="비밀번호"/></br>
-    <button>로그인</button>
+    <form action="/login_checking" method="POST">
+      <div class="form-group">
+          <label for="username">사용자 이름:</label>
+          <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+          <label for="password">비밀번호:</label>
+          <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">로그인</button>
+  </form>
     <button type="button" onclick="location.href = 'http://localhost:3000/oauth/login';">google 로그인</button>
   </br>
     <button type="button" onclick="location.href = './map';">지도구경</button>
@@ -19,3 +27,4 @@
     <button type="button" onclick="location.href = './map_test';">테스트 지도구경</button>
   </body>
 </html>
+

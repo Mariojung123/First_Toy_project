@@ -1,7 +1,7 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const db = require('../../../../vscdb');
+const db = require('./vscdb');
 
 const mysql = {
   connection: function (req, res) {
