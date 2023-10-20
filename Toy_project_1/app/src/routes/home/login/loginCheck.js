@@ -1,14 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../mysql/vscdb'); // MySQL 연결 모듈
-const bcrypt = require('bcrypt'); // 비밀번호 해싱 라이브러리
 
 const login_check = {
   login_checking: function (req, res) {
-    router.post('/login', (req, res) => {
-      const { login_id, login_pw } = req.body;
-    }),
-      (query = 'SELECT * FROM user_login WHERE login_id = ?');
+    const { login_id, login_pw } = req.body; // 변수 선언 및 값 추출
+
+    const query = 'SELECT * FROM user_login WHERE login_id = ?'; // 쿼리 문자열 수정
 
     db.query(query, [login_id], (err, results) => {
       if (err) {
@@ -32,4 +30,5 @@ const login_check = {
     });
   },
 };
+
 module.exports = login_check;
